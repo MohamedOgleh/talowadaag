@@ -16,15 +16,18 @@ abstract class BaseAuth extends StatelessWidget {
     return descText == null
         ? Text(welcomeText, style: Theme.of(context).textTheme.displayLarge)
         : Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(welcomeText,
                   style: Theme.of(context).textTheme.displayLarge),
               const SizedBox(
-                height: 10,
+                height: 12,
               ),
-              Text(descText ?? "",
-                  style: Theme.of(context).textTheme.bodySmall),
+              Text(
+                descText ?? "",
+                style: Theme.of(context).textTheme.bodySmall,
+                textAlign: TextAlign.center,
+              ),
             ],
           );
   }
@@ -36,7 +39,7 @@ abstract class BaseAuth extends StatelessWidget {
       double width = 50}) {
     return MyButton(
       width: width,
-      widget:widget,
+      widget: widget,
       onTap: onTap,
       color: color,
     );
@@ -55,8 +58,4 @@ abstract class BaseAuth extends StatelessWidget {
           }
         });
   }
-
-
-
-
 }

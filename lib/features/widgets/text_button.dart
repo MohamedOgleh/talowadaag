@@ -22,17 +22,17 @@ class MyTextButton extends BaseButton {
     final theme = Theme.of(context);
     return RichText(
       text: TextSpan(
-        style: theme.textTheme.bodyLarge,
+        // style: theme.textTheme.bodyLarge,
         children: <TextSpan>[
           TextSpan(
               text: firstText,
               style: Theme.of(context)
                   .textTheme
                   .bodyLarge
-                  ?.copyWith(color: Colors.black)),
+                 ),
           TextSpan(
             text: lastText,
-            style: theme.textTheme.bodyLarge?.copyWith(
+            style: theme.textTheme.bodyMedium?.copyWith(
               decoration: isUnderlined ? TextDecoration.underline : null,
             ),
             recognizer: TapGestureRecognizer()..onTap = () => onTapped(),

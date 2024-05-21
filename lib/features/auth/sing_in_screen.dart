@@ -27,9 +27,9 @@ class SignScreen extends BaseAuth {
                 welcomeText(
                     welcomeText: "TALOWADAAG",
                     descText:
-                        "La wadaag fikirkaga shirkadaha ku jira appka Talowadaag si xad gudub la\'aan ah."),
+                        "La wadaag fikirkaga shirkadaha ku jira appka Talowadaag si xad gudub la'aan ah."),
                 const SizedBox(
-                  height: 30,
+                  height: 60,
                 ),
                 MyTextInput(
                   hintText: 'Email',
@@ -49,7 +49,7 @@ class SignScreen extends BaseAuth {
                 ),
 
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
 
                 Row(
@@ -79,46 +79,46 @@ class SignScreen extends BaseAuth {
                 const SizedBox(
                   height: 30,
                 ),
-                Text('Or continoue with',
-                    style: Theme.of(context)
-                        .textTheme
-                        .bodyLarge
-                        ?.copyWith(color: Colors.grey)),
+                // Text('Or continoue with',
+                //     style: Theme.of(context)
+                //         .textTheme
+                //         .bodyLarge
+                //         ?.copyWith(color: Colors.grey)),
 
-                const SizedBox(
-                  height: 10,
-                ),
+                // const SizedBox(
+                //   height: 10,
+                // ),
 
-                submitButton(
-                  widget: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(
-                        'assets/google_logo.png',
-                        width: 20,
-                        height: 20,
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Text(
-                        'Continoue with Goolgle',
-                        style: Theme.of(context).textTheme.labelLarge,
-                      ),
-                    ],
-                  ),
-                  onTap: () {},
-                  color: Colors.red.shade700,
-                  width: MediaQuery.of(context).size.width * 0.99,
-                ),
+                //     submitButton(
+                //     widget: Row(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //       children: [
+                //         Image.asset(
+                //           'assets/google_logo.png',
+                //           width: 20,
+                //           height: 20,
+                //         ),
+                //         const SizedBox(
+                //           width: 10,
+                //         ),
+                //         Text(
+                //           'Continoue with Goolgle',
+                //           style: Theme.of(context).textTheme.labelLarge,
+                //         ),
+                //       ],
+                //     ),
+                // onTap: () {},
+                // color: Colors.red.shade700,
+                // width: MediaQuery.of(context).size.width * 0.99,
+                //     ),
 
                 const Spacer(
                   flex: 1,
                 ),
 
                 singInOrSignOut(
-                    firstText: 'Don\'t have an account? ',
-                    lastText: 'Register here'),
+                    firstText: 'I don\'t have an account?  ',
+                    lastText: 'Register'),
                 const Spacer(
                   flex: 1,
                 ),

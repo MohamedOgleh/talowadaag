@@ -1,0 +1,15 @@
+import 'package:flutter/material.dart';
+
+final inputBlueTheme = InputDecorationTheme(
+  contentPadding: const EdgeInsets.symmetric(vertical: 10),
+  hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
+  prefixIconColor: Colors.blue.shade700,
+  enabledBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8),
+    borderSide: const BorderSide(color: Colors.grey),
+  ),
+  focusedBorder: OutlineInputBorder(
+    borderRadius: BorderRadius.circular(8),
+    borderSide: BorderSide(color: Colors.blue.shade700),
+  ),
+);
