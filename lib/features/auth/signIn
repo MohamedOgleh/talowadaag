@@ -1,0 +1,213 @@
+import 'package:app/features/widgets/my_text/text_input.dart';
+import 'package:flutter/gestures.dart';
+import 'package:flutter/material.dart';
+
+import '../widgets/my_button.dart';
+import '../widgets/text_button.dart';
+
+class SignScreen extends StatelessWidget {
+  SignScreen({super.key});
+
+  final TextEditingController _emailControler = TextEditingController();
+  final TextEditingController _passwordControler = TextEditingController();
+
+  // late final TextTheme textTheme;
+
+  // TextTheme textTheme = Theme.of(context).textTheme;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Center(
+            child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Soo dhawaw,',
+                    style: Theme
+                        .of(context)
+                        .textTheme
+                        .displayLarge),
+                // SizedBox(height: 10,),
+                Text(
+                    'La wadaag fikirkaga shirkadaha ku jira appka Talowadaag si xad gudub la\'aan ah.',
+                    style: Theme
+                        .of(context)
+                        .textTheme
+                        .bodySmall),
+
+                MyTextInput(
+                  hintText: 'Email',
+                  isPassword: false,
+                  prefixIcon: Icons.email_outlined,
+                  controller: _emailControler,
+                ),
+
+                MyTextInput(
+                  hintText: 'Password',
+                  isPassword: true,
+                  prefixIcon: Icons.lock_open,
+                  controller: _passwordControler,
+                ),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    MyTextButton(
+                      lastText: 'Passworkii ma ilowdey?',
+                      onTapped: () {
+                        print("Hello");
+                      },
+                    ),
+                  ],
+                ),
+                MyButton(
+                  widget: const Text(
+                    'Sing in',
+                    style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: FontWeight.w800,
+                        color: Colors.white,
+                        fontFamily: 'roboto'),
+                  ),
+                  onTap: () {
+                    print("Hello world");
+                  },
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.99,
+                  color: Colors.teal,
+                ),
+                Text(
+                  'Or continoue with ',
+                  style: Theme
+                      .of(context)
+                      .textTheme
+                      .bodyLarge,
+                ),
+
+                MyButton(
+                  widget: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/google_logo.png',
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        'Continoue with googles',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            fontFamily: 'roboto'),
+                      ),
+                    ],
+                  ),
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.99,
+                  color: Colors.red.shade700,
+                  onTap: () {
+                    final focus = FocusNode();
+                    focus.unfocus();
+                  },
+                ),
+                MyButton(
+                  widget: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        'assets/google_logo.png',
+                        width: 20,
+                        height: 20,
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      const Text(
+                        'Continoue with Facebook',
+                        style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w800,
+                            color: Colors.white,
+                            fontFamily: 'roboto'),
+                      ),
+                    ],
+                  ),
+                  width: MediaQuery
+                      .of(context)
+                      .size
+                      .width * 0.99,
+                  color: Colors.blue.shade700,
+                  onTap: () {
+                    final focus = FocusNode();
+                    focus.unfocus();
+                  },
+                ),
+                const Spacer(),
+
+
+                MyTextButton(firstText: 'Don\'t have an account? ',
+                    lastText: 'Register here',
+                    onTapped: (){}),
+
+
+                // RichText(
+                //   text: TextSpan(
+                //     text: 'Don\'t have an account? ',
+                //     style: const TextStyle(color: Colors.black, fontSize: 14),
+                //     children: <TextSpan>[
+                //       TextSpan(
+                //         text: 'Register here',
+                //         style: const TextStyle(
+                //           color: Colors.blue,
+                //           decoration: TextDecoration.underline,
+                //           fontSize: 14,
+                //         ),
+                //         recognizer: TapGestureRecognizer()
+                //           ..onTap = () {
+                //             print('Register pressed');
+                //           },
+                //       ),
+                //     ],
+                //   ),
+                // ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Row singInSingUp({bool isSingUp = false, required BuildContext context}) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        MyTextButton(
+          isUnderlined: true,
+          firstText:
+          isSingUp ? 'Horaa account u lahaa?  ' : 'Account ma lehi? ',
+          lastText: isSingUp ? 'Gal' : 'Halkan riix',
+          onTapped: () {
+            // if (isSingUp) {
+            //   Navigator.push(context,
+            //       MaterialPageRoute(builder: (context) => SingUpScreen()));
+            // } else {
+            //   Navigator.pop(context);
+            // }
+          },
+        ),
+      ],
+    );
+  }
+}
