@@ -21,7 +21,7 @@ abstract class BaseAuth extends StatelessWidget {
               Text(welcomeText,
                   style: Theme.of(context).textTheme.displayLarge),
               const SizedBox(
-                height: 5,
+                height: 10,
               ),
               Text(descText ?? "",
                   style: Theme.of(context).textTheme.bodySmall),
@@ -30,16 +30,13 @@ abstract class BaseAuth extends StatelessWidget {
   }
 
   MyButton submitButton(
-      {required String buttonTitle,
+      {required Widget widget,
       required Function onTap,
       required Color color,
       double width = 50}) {
     return MyButton(
       width: width,
-      widget: Text(
-        buttonTitle,
-        style: Theme.of(context).textTheme.labelLarge,
-      ),
+      widget:widget,
       onTap: onTap,
       color: color,
     );
@@ -58,6 +55,8 @@ abstract class BaseAuth extends StatelessWidget {
           }
         });
   }
+
+
 
 
 }

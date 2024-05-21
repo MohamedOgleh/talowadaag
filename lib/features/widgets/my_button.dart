@@ -23,7 +23,7 @@ class MyButton extends StatelessWidget {
       onTap: () => onTap(),
       splashColor: Colors.teal.shade200,
       child: Container(
-          margin: EdgeInsets.symmetric(vertical: 10),
+          margin: EdgeInsets.symmetric(vertical: 5),
           alignment: Alignment.center,
           padding:
               EdgeInsets.symmetric(horizontal: hPadding, vertical: vPadding),

@@ -34,7 +34,7 @@ class MyTextInput extends StatelessWidget {
           return Container(
             margin: const EdgeInsets.symmetric(vertical: 5),
             child: TextFormField(
-              obscureText: !state.isPasswordVisible,
+              obscureText: isPassword?!state.isPasswordVisible:false,
               decoration: InputDecoration(
                 hintText: hintText,
                 prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
