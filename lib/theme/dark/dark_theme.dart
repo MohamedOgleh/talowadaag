@@ -25,4 +25,8 @@ final darkTheme = ThemeData(
       fontWeight: FontWeight.w500,
     ), //Welcome text description
   ),
+
+  radioTheme: RadioThemeData(
+
+  ),
 );

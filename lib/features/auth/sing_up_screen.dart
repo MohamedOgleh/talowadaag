@@ -10,6 +10,14 @@ class SigUpScreen extends BaseAuth {
   Widget build(BuildContext context) {
     super.context = context;
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Text(
+          "Registration",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -22,31 +30,101 @@ class SigUpScreen extends BaseAuth {
                 ),
                 welcomeText(
                     welcomeText: "TALOWADAAG",
-                    descText:
-                        "Halkan iska diwaan geli La wadaag fikirkaga shirkadaha ku jira appka Talowadaag si xad gudub la'aan ah."),
+                    descText: "Join with us read and give your idea."),
                 const SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
                 MyTextInput(
-                  hintText: 'Email',
+                  hintText: 'Full name',
                   isPassword: false,
-                  prefixIcon: Icons.email_outlined,
                   controller: emailController,
                 ),
+                MyTextInput(
+                  hintText: 'Contacts',
+                  isPassword: false,
+                  prefixIcon: Icons.phone_outlined,
+                  controller: emailController,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      'Gender',
+                      style: Theme.of(context).textTheme.bodyLarge,
+                    ),
+                    Row(
+                      children: [
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        radioButton(label: "Male", value: 'Male'),
+                        const SizedBox(
+                          width: 50,
+                        ),
+                        radioButton(label: "Female", value: 'Female'),
+                      ],
+                    ),
+                  ],
+                ),
+                // dob(),
+                emailInputField(),
+                passwordInputField(),
                 const SizedBox(
                   height: 10,
                 ),
-                MyTextInput(
-                  hintText: 'Password',
-                  isPassword: true,
-                  prefixIcon: Icons.lock_open,
-                  controller: passwordController,
+                submitButton(
+                  widget: Text(
+                    'Register',
+                    style: Theme.of(context).textTheme.labelLarge,
+                  ),
+                  onTap: () {},
+                  color: Theme.of(context).primaryColor,
+                  width: MediaQuery.of(context).size.width * 0.99,
+                ),
+                const Spacer(),
+                singInOrSignOut(
+                    firstText: "I don't have an account? ",
+                    lastText: "Login",
+                    isLogin: false),
+                const Spacer(
+                  flex: 1,
                 ),
               ],
             ),
           ),
         ),
       ),
+    );
+  }
+
+  Row radioButton({
+    required String label,
+    required String value,
+  }) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Radio(
+          value: value,
+          groupValue: "gander",
+          onChanged: (value) {
+            print("My value is $value");
+          },
+        ),
+        Text(
+          label,
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ],
+    );
+  }
+
+  Column dob() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("Date of brith"),
+        // DropdownButton(items: [], onChanged: onChanged)
+      ],
     );
   }
 }

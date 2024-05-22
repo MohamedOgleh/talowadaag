@@ -1,5 +1,6 @@
+import 'package:app/features/auth/forgot_password_screen.dart';
+import 'package:app/features/auth/otp_screen.dart';
 import 'package:app/features/auth/sing_in_screen.dart';
-import 'package:app/features/auth/sing_up_screen.dart';
 import 'package:app/theme/blue/blu_theme.dart';
 import 'package:app/theme/dark/dark_theme.dart';
 import 'package:app/theme/green/green_theme.dart';
@@ -19,6 +20,6 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: greenTheme,
         darkTheme: darkTheme,
-        home: SignScreen());
+        home: OtpScreen(userEmail: "Oglehmo@gmail.com",));
   }
 }

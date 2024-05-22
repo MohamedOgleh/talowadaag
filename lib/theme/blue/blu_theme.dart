@@ -24,4 +24,10 @@ final blueTheme = ThemeData(
       fontWeight: FontWeight.w500,
     ),
   ),
+
+  // radioTheme: RadioThemeData(
+  //
+  //   fillColor: MaterialStateColor.resolveWith((states) => if())
+  // ),
+
 );

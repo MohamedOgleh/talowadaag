@@ -1,4 +1,7 @@
+import 'package:app/features/auth/sing_in_screen.dart';
+import 'package:app/features/auth/sing_up_screen.dart';
 import 'package:app/features/widgets/my_button.dart';
+import 'package:app/features/widgets/my_text/text_input.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -46,16 +49,37 @@ abstract class BaseAuth extends StatelessWidget {
   }
 
   MyTextButton singInOrSignOut(
-      {String? firstText, required String lastText, bool isLogin = true}) {
+      {String? firstText, required String lastText, bool isLogin = false}) {
     return MyTextButton(
         firstText: firstText,
         lastText: lastText,
         onTapped: () {
           if (isLogin) {
-            print("Register  called");
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => SigUpScreen()));
           } else {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => SignScreen()));
             print("Logged called called");
           }
         });
+  }
+
+  MyTextInput emailInputField() {
+    return MyTextInput(
+      hintText: 'Email',
+      isPassword: false,
+      prefixIcon: Icons.email_outlined,
+      controller: emailController,
+    );
+  }
+
+  MyTextInput passwordInputField() {
+    return MyTextInput(
+      hintText: 'Password',
+      isPassword: true,
+      prefixIcon: Icons.lock_open,
+      controller: passwordController,
+    );
   }
 }

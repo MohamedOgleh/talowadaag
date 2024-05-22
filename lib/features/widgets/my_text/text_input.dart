@@ -32,9 +32,9 @@ class MyTextInput extends StatelessWidget {
       child: BlocBuilder<PasswordVisibilityCubit, PasswordVisibilityState>(
         builder: (context, state) {
           return Container(
-            margin: const EdgeInsets.symmetric(vertical: 5),
+            margin: const EdgeInsets.symmetric(vertical: 8),
             child: TextFormField(
-              obscureText: isPassword?!state.isPasswordVisible:false,
+              obscureText: isPassword ? !state.isPasswordVisible : false,
               decoration: InputDecoration(
                 hintText: hintText,
                 prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,

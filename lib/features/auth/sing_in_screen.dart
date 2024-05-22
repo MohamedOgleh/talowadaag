@@ -11,42 +11,31 @@ class SignScreen extends BaseAuth {
   Widget build(BuildContext context) {
     super.context = context;
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        centerTitle: true,
+        title: Text(
+          "Sign in",
+          style: Theme.of(context).textTheme.bodyLarge,
+        ),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
           child: Center(
             child: Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Spacer(
-                //   flex: 1,
-                // ),
                 const Spacer(
                   flex: 1,
                 ),
                 welcomeText(
                     welcomeText: "TALOWADAAG",
-                    descText:
-                        "La wadaag fikirkaga shirkadaha ku jira appka Talowadaag si xad gudub la'aan ah."),
+                    descText: "Welcome back, we were expecting you."),
                 const SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
-                MyTextInput(
-                  hintText: 'Email',
-                  isPassword: false,
-                  prefixIcon: Icons.email_outlined,
-                  controller: emailController,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-
-                MyTextInput(
-                  hintText: 'Password',
-                  isPassword: true,
-                  prefixIcon: Icons.lock_open,
-                  controller: passwordController,
-                ),
+                emailInputField(),
+                passwordInputField(),
 
                 const SizedBox(
                   height: 20,
@@ -56,7 +45,7 @@ class SignScreen extends BaseAuth {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     MyTextButton(
-                      lastText: 'Passworkii ma ilowdey?',
+                      lastText: 'Forgot password?',
                       onTapped: () {
                         print("Hello");
                       },
@@ -66,7 +55,6 @@ class SignScreen extends BaseAuth {
                 const SizedBox(
                   height: 10,
                 ),
-
                 submitButton(
                   widget: Text(
                     'Sign in',
@@ -118,7 +106,8 @@ class SignScreen extends BaseAuth {
 
                 singInOrSignOut(
                     firstText: 'I don\'t have an account?  ',
-                    lastText: 'Register'),
+                    lastText: 'Register',
+                    isLogin: true),
                 const Spacer(
                   flex: 1,
                 ),

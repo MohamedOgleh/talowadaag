@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 final inputTheme = InputDecorationTheme(
-  contentPadding: const EdgeInsets.symmetric(vertical: 10),
+  contentPadding: const EdgeInsets.symmetric(horizontal: 10),
   hintStyle: const TextStyle(fontSize: 16, color: Colors.grey),
   prefixIconColor: Colors.teal,
   enabledBorder: OutlineInputBorder(
